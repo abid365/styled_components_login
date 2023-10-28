@@ -1,15 +1,15 @@
 import React from "react";
 import { WindowStyle } from "./Styles/Window.styled";
-import { FlexBox } from "./Styles/Flexbox.styled";
+import { GridLayOut } from "./Styles/Grid.styled";
 import { ImgStyle } from "./Styles/Img.styled";
-import { FormStyle } from "./Styles/Grid.styled";
+import { FormStyle } from "./Styles/Form.styled";
 import { Flex } from "./Styles/Flex.styled";
 import { BtnStyle } from "./Styles/Btn.styled";
 
 const Login = () => {
   return (
     <WindowStyle>
-      <FlexBox>
+      <GridLayOut>
         <ImgStyle></ImgStyle>
         <FormStyle>
           <div>
@@ -42,11 +42,13 @@ const Login = () => {
               <BtnStyle>Submit</BtnStyle>
             </form>
             <div>
-              <h1>Didn't have an account? Register Now</h1>
+              <h1>
+                Didn't have an account? <a href="#">Register Now</a>
+              </h1>
             </div>
           </div>
         </FormStyle>
-      </FlexBox>
+      </GridLayOut>
     </WindowStyle>
   );
 };
