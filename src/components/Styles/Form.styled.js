@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.div`
-  border: 1px solid #e2e2e2;
-  border-top-right-radius: 14px;
-  border-bottom-right-radius: 14px;
+  border-left: 1px solid #e2e2e2;
+  // border-top-right-radius: 14px;
+  // border-bottom-right-radius: 14px;
 
   @media (max-width: ${({ theme }) => theme.mobile}){
+    border: 1px solid #e2e2e2
     border-radius: 14px;
   }
 
   & > div {
-    padding: 20px 20px;
+    padding: 20px 40px;
   }
   & > div > h1 {
     font-size: 28px;
@@ -24,7 +25,7 @@ export const FormStyle = styled.div`
   }
 
   & > div > form > input {
-    padding: 4px 8px 4px 0px;
+    padding: 8px 12px 8px 0px;
     border: 1px solid #e2e2e2;
     border-radius: 4px;
     width: 100%;

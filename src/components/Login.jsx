@@ -48,7 +48,9 @@ const Login = () => {
                   </span>
                 </label>
               </div>
-              <BtnStyle>Submit</BtnStyle>
+              <BtnStyle>
+                <button>Submit</button>
+              </BtnStyle>
             </form>
             <div>
               <h1>
