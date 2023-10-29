@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { WindowStyle } from "./Styles/Window.styled";
 import { GridLayOut } from "./Styles/Grid.styled";
 import { ImgStyle } from "./Styles/Img.styled";
@@ -8,8 +8,23 @@ import { BtnStyle } from "./Styles/Btn.styled";
 import { InputPass } from "./Styles/InputPass.styled";
 
 const Login = () => {
-  const handleSubmit = () => {
-    console.log("Working");
+  const [pass, SetShowPass] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const user = form.username.value;
+    const pass = form.password.value;
+    const info = {
+      user,
+      pass,
+    };
+    alert("Success");
+  };
+
+  const toggler = (e) => {
+    e.preventDefault();
+    SetShowPass(!pass);
   };
 
   return (
@@ -26,14 +41,14 @@ const Login = () => {
             <h1>
               Great to see you <br /> again 👋
             </h1>
-            <form onSubmit={handleSubmit} action="">
+            <form onSubmit={handleSubmit}>
               <label htmlFor="login">Username</label> <br />
-              <input type="text" name="Username" />
+              <input type="text" name="username" />
               <br />
               <label htmlFor="password">Password</label> <br />
               <InputPass>
-                <input type="password" />
-                <button>👀</button>
+                <input type={pass ? "text" : "password"} name="password" />
+                <button onClick={toggler}>👀</button>
               </InputPass>
               <Flex>
                 <div>
@@ -46,7 +61,7 @@ const Login = () => {
               </Flex>
               <div>
                 <label htmlFor="">
-                  <input type="checkbox" name="terms&cond" />
+                  <input type="checkbox" name="terms&con" />
                   <span>
                     Agree to <a href="#">Terms & Conditions</a>
                   </span>
