@@ -8,6 +8,8 @@ export const FormStyle = styled.div`
   @media (max-width: ${({ theme }) => theme.mobile}){
     border: 1px solid #e2e2e2
     border-radius: 14px;
+    border-left: none;
+    padding: 20px 10px
   }
 
   & > div {
@@ -25,7 +27,7 @@ export const FormStyle = styled.div`
   }
 
   & > div > form > input {
-    padding: 8px 12px 8px 0px;
+    padding: 8px 12px 8px 12px;
     border: 1px solid #e2e2e2;
     border-radius: 4px;
     width: 100%;

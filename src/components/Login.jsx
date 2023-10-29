@@ -5,6 +5,7 @@ import { ImgStyle } from "./Styles/Img.styled";
 import { FormStyle } from "./Styles/Form.styled";
 import { Flex } from "./Styles/Flex.styled";
 import { BtnStyle } from "./Styles/Btn.styled";
+import { InputPass } from "./Styles/InputPass.styled";
 
 const Login = () => {
   const handleSubmit = () => {
@@ -30,7 +31,10 @@ const Login = () => {
               <input type="text" name="Username" />
               <br />
               <label htmlFor="password">Password</label> <br />
-              <input type="password" name="password" />
+              <InputPass>
+                <input type="password" />
+                <button>👀</button>
+              </InputPass>
               <Flex>
                 <div>
                   <label htmlFor="">

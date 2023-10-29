@@ -2,6 +2,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/Styles/Global";
 import { Container } from "./components/Styles/Contaner.styled";
 import Login from "./components/Login";
+import { InputPass } from "./components/Styles/InputPass.styled";
 
 function App() {
   const theme = {
