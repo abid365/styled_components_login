@@ -9,7 +9,8 @@ import { InputPass } from "./Styles/InputPass.styled";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-  const [pass, SetShowPass] = useState(false);
+  const [pass, setShowPass] = useState(false);
+  const [user, setUser] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,21 +22,21 @@ const Login = () => {
       pass,
     };
 
-    /*  const value = JSON.stringify(info);
-    localStorage.setItem("data", value); */
+    if (typeof info.user === "string") {
+      setUser(true);
+    }
   };
 
   const toggler = (e) => {
     e.preventDefault();
-    SetShowPass(!pass);
+    setShowPass(!pass);
   };
 
-  /*  const notify = () => {
-    const userData = JSON.parse(localStorage.getItem("data"));
-    if (userData.user){
-
-    } 
-  }; */
+  /* if (user) {
+    toast.success("Good");
+  } else {
+    toast.error("kharap");
+  } */
 
   return (
     <WindowStyle>
@@ -54,15 +55,11 @@ const Login = () => {
             </h1>
             <form onSubmit={handleSubmit}>
               <label htmlFor="login">Username</label> <br />
-              <input type="text" name="username" required />
+              <input type="text" name="username" />
               <br />
               <label htmlFor="password">Password</label> <br />
               <InputPass>
-                <input
-                  type={pass ? "text" : "password"}
-                  name="password"
-                  required
-                />
+                <input type={pass ? "text" : "password"} name="password" />
                 <button onClick={toggler}>👀</button>
               </InputPass>
               <Flex>
@@ -83,7 +80,7 @@ const Login = () => {
                 </label>
               </div>
               <BtnStyle>
-                <button onClick={""}>Submit</button>
+                <button>Submit</button>
               </BtnStyle>
             </form>
             <div>
