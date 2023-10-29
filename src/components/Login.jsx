@@ -6,6 +6,7 @@ import { FormStyle } from "./Styles/Form.styled";
 import { Flex } from "./Styles/Flex.styled";
 import { BtnStyle } from "./Styles/Btn.styled";
 import { InputPass } from "./Styles/InputPass.styled";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const [pass, SetShowPass] = useState(false);
@@ -19,7 +20,9 @@ const Login = () => {
       user,
       pass,
     };
-    alert("Success");
+
+    /*  const value = JSON.stringify(info);
+    localStorage.setItem("data", value); */
   };
 
   const toggler = (e) => {
@@ -27,8 +30,16 @@ const Login = () => {
     SetShowPass(!pass);
   };
 
+  /*  const notify = () => {
+    const userData = JSON.parse(localStorage.getItem("data"));
+    if (userData.user){
+
+    } 
+  }; */
+
   return (
     <WindowStyle>
+      <Toaster />
       <GridLayOut>
         <ImgStyle>
           <img
@@ -43,11 +54,15 @@ const Login = () => {
             </h1>
             <form onSubmit={handleSubmit}>
               <label htmlFor="login">Username</label> <br />
-              <input type="text" name="username" />
+              <input type="text" name="username" required />
               <br />
               <label htmlFor="password">Password</label> <br />
               <InputPass>
-                <input type={pass ? "text" : "password"} name="password" />
+                <input
+                  type={pass ? "text" : "password"}
+                  name="password"
+                  required
+                />
                 <button onClick={toggler}>👀</button>
               </InputPass>
               <Flex>
@@ -68,7 +83,7 @@ const Login = () => {
                 </label>
               </div>
               <BtnStyle>
-                <button>Submit</button>
+                <button onClick={""}>Submit</button>
               </BtnStyle>
             </form>
             <div>
