@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.div`
-  border: 1px solid red;
+  border: 1px solid #e2e2e2;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+
+  @media (max-width: ${({ theme }) => theme.mobile}){
+    border-radius: 14px;
+  }
+
   & > div {
     padding: 20px 20px;
   }

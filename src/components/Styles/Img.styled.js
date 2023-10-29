@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export const ImgStyle = styled.img`
-  border: 1px solid cyan;
-  padding: 50px 50px;
-  align-self: center;
-  justify-self: center;
+export const ImgStyle = styled.div`
+  // border: 1px solid cyan;
+
+  & > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 `;

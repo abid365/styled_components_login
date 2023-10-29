@@ -7,16 +7,25 @@ import { Flex } from "./Styles/Flex.styled";
 import { BtnStyle } from "./Styles/Btn.styled";
 
 const Login = () => {
+  const handleSubmit = () => {
+    console.log("Working");
+  };
+
   return (
     <WindowStyle>
       <GridLayOut>
-        <ImgStyle></ImgStyle>
+        <ImgStyle>
+          <img
+            src="https://i.pinimg.com/originals/9c/4a/80/9c4a809da8dbbb6c814deaff6a113181.gif"
+            alt=""
+          />
+        </ImgStyle>
         <FormStyle>
           <div>
             <h1>
               Great to see you <br /> again 👋
             </h1>
-            <form action="">
+            <form onSubmit={handleSubmit} action="">
               <label htmlFor="login">Username</label> <br />
               <input type="text" name="Username" />
               <br />
