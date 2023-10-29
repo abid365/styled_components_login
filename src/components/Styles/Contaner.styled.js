@@ -6,5 +6,5 @@ export const Container = styled.div`
   align-items: center;
   padding: 10px 50px;
   min-height: 100vh;
-  background-color: #111110;
+  // background-color: #111110;
 `;
